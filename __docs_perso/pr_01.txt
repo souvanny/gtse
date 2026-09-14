@@ -1,0 +1,17 @@
+Ce projet est un squelette.
+Il faut repartir de zéro.
+Il vient d'un projet nommé espace-ogimi ou ogimi.
+Il faut suppriler tout référence à l'ancien projet.
+Le nouveau projet s'appelle GTSE (Garde corps , toiture , etancheite).
+
+Je voudrais un simple site vitrine avec angular.
+La partie API n'est pas à faire pour le moment, le laisser de côté.
+Il faut se servir des photos dsans __images pour un portfolio.
+Faire peu de pages, c'est juste un site vitrine.
+Agrémente de quelques textes en rapport avec le nom de l'entreprise.
+Broder quelques textes.
+
+Le site est simple et agréable.
+
+
+

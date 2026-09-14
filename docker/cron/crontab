@@ -1,0 +1,4 @@
+# Tâches planifiées — supercronic (voir docker/cron/crontab)
+#
+# Exemples de commandes à définir pour le nouveau projet :
+# 0 * * * * cd /var/www/html && php bin/console app:my-command --no-interaction

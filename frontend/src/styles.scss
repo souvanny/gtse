@@ -1,0 +1,145 @@
+@use './styles/tokens';
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--cream);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-title);
+  color: var(--deep);
+  margin: 0;
+}
+
+a {
+  color: var(--terra);
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text);
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--terra);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius);
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.1s ease;
+
+  &:hover:not(:disabled) {
+    background: var(--coral);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  color: var(--deep);
+  font-weight: 700;
+
+  &:hover {
+    background: var(--olive-pale);
+  }
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  padding: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+
+  label {
+    font-weight: 700;
+    color: var(--deep);
+    font-size: 14px;
+  }
+
+  input,
+  textarea {
+    border: 1px solid var(--sand);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &:focus {
+      border-color: var(--olive);
+      box-shadow: 0 0 0 3px var(--olive-pale);
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 88px;
+  }
+}
+
+.error {
+  color: #b23b3b;
+  font-size: 14px;
+}
+
+.muted {
+  color: var(--olive);
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 24px 20px 96px;
+}
