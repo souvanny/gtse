@@ -1,20 +1,22 @@
 :root {
-  --olive: #8da870;
-  --olive-lt: #b5cc9e;
-  --olive-pale: #eff4e9;
-  --deep: #3d5233;
-  --terra: #c17b4e;
-  --terra-pale: #fdf3eb;
-  --coral: #e8956d;
-  --cream: #faf6f0;
-  --sand: #ede4d5;
-  --text: #2c2c2c;
+  --slate: #2b3440;
+  --slate-700: #3c4756;
+  --zinc: #64748b;
+  --zinc-pale: #eef1f4;
+  --terra: #c0602b;
+  --terra-dark: #9c4b1e;
+  --terra-pale: #f8ece2;
+  --cream: #f7f4ef;
+  --sand: #e7e0d3;
+  --text: #3a3f45;
+  --muted: #6b7280;
   --white: #ffffff;
 
   --radius: 18px;
   --radius-sm: 12px;
-  --shadow-soft: 0 8px 24px rgba(61, 82, 51, 0.08);
-  --shadow-card: 0 4px 16px rgba(61, 82, 51, 0.06);
+
+  --shadow-soft: 0 12px 32px rgba(43, 52, 64, 0.1);
+  --shadow-card: 0 4px 18px rgba(43, 52, 64, 0.07);
 
   --font-title: 'Playfair Display', Georgia, serif;
   --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;

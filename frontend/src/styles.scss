@@ -8,7 +8,10 @@ html,
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -16,17 +19,23 @@ body {
   color: var(--text);
   font-family: var(--font-body);
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
 h2,
-h3 {
+h3,
+h4 {
   font-family: var(--font-title);
-  color: var(--deep);
-  margin: 0;
+  color: var(--slate);
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+p {
+  margin: 0 0 16px;
 }
 
 a {
@@ -34,57 +43,77 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 button {
   font-family: var(--font-body);
   cursor: pointer;
 }
 
-input,
-textarea,
-select {
-  font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--text);
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.btn-primary {
+.section {
+  padding: 72px 0;
+}
+
+.section-title {
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+
+.section-lead {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+}
+
+.section-head {
+  margin-bottom: 40px;
+}
+
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: var(--terra);
-  color: var(--white);
   border: none;
-  border-radius: var(--radius);
-  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  padding: 13px 22px;
   font-size: 16px;
   font-weight: 700;
-  transition: background 0.2s ease, transform 0.1s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+}
 
-  &:hover:not(:disabled) {
-    background: var(--coral);
-  }
+.btn:active {
+  transform: scale(0.98);
+}
 
-  &:active:not(:disabled) {
-    transform: scale(0.98);
-  }
+.btn-primary {
+  background: var(--terra);
+  color: var(--white);
 
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  &:hover {
+    background: var(--terra-dark);
   }
 }
 
-.btn-ghost {
+.btn-outline {
   background: transparent;
+  color: var(--slate);
   border: 1px solid var(--sand);
-  border-radius: var(--radius);
-  padding: 12px 18px;
-  color: var(--deep);
-  font-weight: 700;
 
   &:hover {
-    background: var(--olive-pale);
+    border-color: var(--zinc);
+    background: var(--white);
   }
 }
 
@@ -93,53 +122,80 @@ select {
   border: 1px solid var(--sand);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
-  padding: 20px;
 }
 
-.field {
+.eyebrow {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 12px;
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.page-hero {
+  background:
+    linear-gradient(120deg, rgba(43, 52, 64, 0.92) 0%, rgba(43, 52, 64, 0.7) 100%),
+    url('/images/toiture-bac-acier.jpeg') center/cover no-repeat;
+  color: var(--white);
+  padding: 96px 0 80px;
+
+  h1 {
+    color: var(--white);
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.85);
+    max-width: 620px;
+    font-size: 1.08rem;
+    margin: 0;
+  }
+
+  .eyebrow {
+    color: var(--terra-pale);
+  }
+}
+
+.cta-banner {
+  background: var(--terra);
+  color: var(--white);
+  padding: 64px 0;
+
+  h2 {
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.85);
+  }
+}
+
+.cta-inner {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 16px;
-
-  label {
-    font-weight: 700;
-    color: var(--deep);
-    font-size: 14px;
-  }
-
-  input,
-  textarea {
-    border: 1px solid var(--sand);
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    background: var(--white);
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-
-    &:focus {
-      border-color: var(--olive);
-      box-shadow: 0 0 0 3px var(--olive-pale);
-    }
-  }
-
-  textarea {
-    resize: vertical;
-    min-height: 88px;
-  }
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
 }
 
-.error {
-  color: #b23b3b;
-  font-size: 14px;
-}
-
-.muted {
-  color: var(--olive);
-}
-
-.page {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 24px 20px 96px;
+@media (max-width: 900px) {
+  .cta-inner {
+    flex-direction: column;
+    text-align: center;
+  }
 }

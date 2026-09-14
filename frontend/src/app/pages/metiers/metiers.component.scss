@@ -1,0 +1,151 @@
+.metiers-list {
+  padding-top: 80px;
+}
+
+.metier {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  padding: 48px 0;
+  scroll-margin-top: 100px;
+
+  & + .metier {
+    border-top: 1px solid var(--sand);
+  }
+
+  &.flip {
+    .metier-media {
+      order: 2;
+    }
+  }
+}
+
+.metier-media {
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+
+  img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+}
+
+.metier-content {
+  .metier-index {
+    display: inline-block;
+    font-family: var(--font-title);
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--sand);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+}
+
+.metier-accroche {
+  font-weight: 700;
+  color: var(--terra);
+  font-size: 1.08rem;
+  margin-bottom: 12px;
+}
+
+.metier-desc {
+  color: var(--muted);
+}
+
+.metier-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+
+  li {
+    position: relative;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    color: var(--slate-700);
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      background: var(--terra-pale);
+      border: 2px solid var(--terra);
+    }
+  }
+}
+
+.process {
+  background: var(--white);
+  border-top: 1px solid var(--sand);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.process-step {
+  padding: 28px;
+
+  h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+}
+
+.process-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--slate);
+  color: var(--white);
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .metier {
+    grid-template-columns: 1fr;
+    gap: 28px;
+
+    &.flip .metier-media {
+      order: 0;
+    }
+  }
+
+  .metier-media img {
+    height: 280px;
+  }
+
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}

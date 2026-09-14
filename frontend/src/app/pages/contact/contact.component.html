@@ -1,0 +1,93 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Contact</span>
+    <h1>Parlons de votre projet</h1>
+    <p>
+      Un devis, une question, un conseil : notre équipe vous répond rapidement
+      et sans engagement.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container contact-grid">
+    <div class="contact-infos">
+      <div class="info-card">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+            <path d="M5 4h4l2 5-2.5 1.5a12 12 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <h3>Téléphone</h3>
+          <p>06 00 00 00 00</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+            <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <h3>Email</h3>
+          <p>contact&#64;gtse.fr</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+            <path d="M12 21s7-6 7-11a7 7 0 1 0-14 0c0 5 7 11 7 11z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+          </svg>
+        </span>
+        <div>
+          <h3>Zone d'intervention</h3>
+          <p>France — déplacements sur toute la région</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <div>
+          <h3>Horaires</h3>
+          <p>Lun – Ven : 8h à 18h</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="card contact-form" (ngSubmit)="envoyer()">
+      <h2>Demande de devis</h2>
+      <p class="form-note">
+        Remplissez ce formulaire, il ouvrira votre messagerie avec votre demande pré-remplie.
+      </p>
+
+      <label class="field">
+        <span>Nom</span>
+        <input type="text" name="nom" [(ngModel)]="nom" required />
+      </label>
+
+      <label class="field">
+        <span>Email</span>
+        <input type="email" name="email" [(ngModel)]="email" required />
+      </label>
+
+      <label class="field">
+        <span>Téléphone</span>
+        <input type="tel" name="telephone" [(ngModel)]="telephone" />
+      </label>
+
+      <label class="field">
+        <span>Votre projet</span>
+        <textarea name="message" [(ngModel)]="message" placeholder="Décrivez votre besoin (type d'ouvrage, surface, adresse...)"></textarea>
+      </label>
+
+      <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+    </form>
+  </div>
+</section>

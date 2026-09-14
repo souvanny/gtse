@@ -1,0 +1,151 @@
+<section class="hero">
+  <div class="container hero-inner">
+    <p class="hero-eyebrow">Garde-corps · Toiture · Étanchéité</p>
+    <h1>Des ouvrages solides,<br />pour bâtir l'avenir.</h1>
+    <p class="hero-lead">
+      GTSE réunit des compagnons spécialisés en couverture, étanchéité et
+      garde-corps. Nous protégeons, sécurisons et embellissons vos bâtiments,
+      du socle à la crête.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" routerLink="/contact">Demander un devis</a>
+      <a class="btn btn-light" routerLink="/realisations">Voir nos réalisations</a>
+    </div>
+  </div>
+</section>
+
+<section class="section intro">
+  <div class="container intro-grid">
+    <div class="intro-text">
+      <span class="eyebrow">À propos</span>
+      <h2 class="section-title">Un savoir-faire complet pour l'enveloppe du bâtiment</h2>
+      <p>
+        Chez GTSE, nous intervenons sur l'ensemble des ouvrages qui protègent un
+        bâtiment : la toiture qui l'abrite, l'étanchéité qui le préserve et les
+        garde-corps qui le sécurisent. Trois métiers complémentaires, maîtrisés
+        par une seule équipe.
+      </p>
+      <p>
+        Qu'il s'agisse d'une maison individuelle, d'un immeuble ou d'un bâtiment
+        tertiaire, chaque chantier bénéficie du même soin : des matériaux
+        choisis, une exécution rigoureuse et un respect scrupuleux des délais.
+      </p>
+    </div>
+    <div class="intro-media">
+      <img src="/images/toiture-zinc.jpeg" alt="Toiture en zinc réalisée par GTSE" />
+    </div>
+  </div>
+</section>
+
+<section class="section metiers">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Nos métiers</span>
+      <h2 class="section-title">Trois métiers, une même exigence</h2>
+      <p class="section-lead">
+        De la pose d'un garde-corps à la réfection complète d'une toiture, nous
+        couvrons l'intégralité de vos besoins.
+      </p>
+    </div>
+
+    <div class="metiers-grid">
+      @for (m of metiersAvecImage; track m.slug) {
+        <a class="card metier-card" [routerLink]="['/metiers']" [fragment]="m.slug">
+          <div class="metier-img">
+            <img [src]="m.image" [alt]="m.nom" loading="lazy" />
+          </div>
+          <div class="metier-body">
+            <h3>{{ m.nom }}</h3>
+            <p>{{ m.accroche }}</p>
+            <span class="metier-link">En savoir plus</span>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="section atouts">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Pourquoi nous choisir</span>
+      <h2 class="section-title">La rigueur du terrain, à votre service</h2>
+    </div>
+    <div class="atouts-grid">
+      <div class="card atout">
+        <span class="atout-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+            <path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Sécurité &amp; conformité</h3>
+        <p>Des ouvrages réalisés dans le respect des normes en vigueur et des règles de l'art.</p>
+      </div>
+      <div class="card atout">
+        <span class="atout-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+            <path d="M12 2a7 7 0 0 0-4 12.7V20h8v-5.3A7 7 0 0 0 12 2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M10 22h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Savoir-faire</h3>
+        <p>Une équipe de compagnons expérimentés, formés aux techniques de la couverture et de l'étanchéité.</p>
+      </div>
+      <div class="card atout">
+        <span class="atout-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Délais respectés</h3>
+        <p>Une organisation précise du chantier, du devis à la réception des travaux.</p>
+      </div>
+      <div class="card atout">
+        <span class="atout-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none">
+            <path d="M20 12V7l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M14 2v5h5" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M15 18l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <h3>Devis clair</h3>
+        <p>Un chiffrage détaillé et transparent, sans surprise, pour chaque intervention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section apercu">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Réalisations</span>
+      <h2 class="section-title">Un aperçu de nos chantiers</h2>
+      <p class="section-lead">
+        Quelques exemples parmi les ouvrages que nous avons réalisés pour nos clients.
+      </p>
+    </div>
+    <div class="apercu-grid">
+      @for (item of apercu; track item.id) {
+        <figure class="apercu-item">
+          <img [src]="item.src" [alt]="item.titre" loading="lazy" />
+          <figcaption>{{ item.titre }}</figcaption>
+        </figure>
+      }
+    </div>
+    <div class="apercu-cta">
+      <a class="btn btn-outline" routerLink="/realisations">Découvrir toutes nos réalisations</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Un projet de toiture, d'étanchéité ou de garde-corps&nbsp;?</h2>
+      <p>Parlons-en. Nous étudions gratuitement votre demande et vous apportons une réponse claire.</p>
+    </div>
+    <a class="btn btn-primary" routerLink="/contact">Nous contacter</a>
+  </div>
+</section>

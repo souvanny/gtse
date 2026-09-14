@@ -1,0 +1,53 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Réalisations</span>
+    <h1>Nos chantiers en images</h1>
+    <p>
+      Garde-corps, toitures et étanchéités : découvrez une sélection de nos
+      réalisations récentes.
+    </p>
+  </div>
+</section>
+
+<section class="section gallery">
+  <div class="container">
+    <div class="filters">
+      @for (c of categories; track c.slug) {
+        <button
+          class="filter"
+          [class.active]="filtre === c.slug"
+          (click)="setFiltre(c.slug)"
+        >
+          {{ c.libelle }}
+        </button>
+      }
+    </div>
+
+    <div class="gallery-grid">
+      @for (item of filtrees; track item.id) {
+        <figure class="gallery-item" (click)="ouvrir(item)">
+          <img [src]="item.src" [alt]="item.titre" loading="lazy" />
+          <figcaption>
+            <span class="gallery-cat">{{ categorieLabel(item.categorie) }}</span>
+            <span class="gallery-title">{{ item.titre }}</span>
+          </figcaption>
+        </figure>
+      }
+    </div>
+  </div>
+</section>
+
+@if (lightbox) {
+  <div class="lightbox" (click)="fermer()">
+    <button class="lightbox-close" (click)="fermer()" aria-label="Fermer">×</button>
+    <button class="lightbox-nav prev" (click)="$event.stopPropagation(); precedente()" aria-label="Précédent">‹</button>
+    <figure class="lightbox-figure" (click)="$event.stopPropagation()">
+      <img [src]="lightbox.src" [alt]="lightbox.titre" />
+      <figcaption>
+        <span class="gallery-cat">{{ categorieLabel(lightbox.categorie) }}</span>
+        <span class="gallery-title">{{ lightbox.titre }}</span>
+      </figcaption>
+    </figure>
+    <button class="lightbox-nav next" (click)="$event.stopPropagation(); suivante()" aria-label="Suivant">›</button>
+  </div>
+}

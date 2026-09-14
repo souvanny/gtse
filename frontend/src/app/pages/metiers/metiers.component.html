@@ -1,0 +1,62 @@
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Nos métiers</span>
+    <h1>Un savoir-faire spécialisé</h1>
+    <p>
+      Trois métiers complémentaires pour prendre soin de l'enveloppe de vos
+      bâtiments : garde-corps, toiture et étanchéité.
+    </p>
+  </div>
+</section>
+
+<section class="section metiers-list">
+  <div class="container">
+    @for (m of metiersAvecImage; track m.slug; let i = $index) {
+      <article class="metier" [id]="m.slug" [class.flip]="i % 2 === 1">
+        <div class="metier-media">
+          <img [src]="m.image" [alt]="m.nom" loading="lazy" />
+        </div>
+        <div class="metier-content">
+          <span class="metier-index">0{{ i + 1 }}</span>
+          <h2>{{ m.nom }}</h2>
+          <p class="metier-accroche">{{ m.accroche }}</p>
+          <p class="metier-desc">{{ m.description }}</p>
+          <ul>
+            @for (p of m.points; track p) {
+              <li>{{ p }}</li>
+            }
+          </ul>
+          <a class="btn btn-primary" routerLink="/contact">Demander un devis</a>
+        </div>
+      </article>
+    }
+  </div>
+</section>
+
+<section class="section process">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Notre méthode</span>
+      <h2 class="section-title">Un déroulement clair, du devis à la livraison</h2>
+    </div>
+    <div class="process-grid">
+      @for (e of etapes; track e.titre; let i = $index) {
+        <div class="card process-step">
+          <span class="process-num">{{ i + 1 }}</span>
+          <h3>{{ e.titre }}</h3>
+          <p>{{ e.texte }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container cta-inner">
+    <div>
+      <h2>Besoin d'un conseil sur votre projet&nbsp;?</h2>
+      <p>Contactez-nous, nous vous répondons rapidement et sans engagement.</p>
+    </div>
+    <a class="btn btn-primary" routerLink="/contact">Nous contacter</a>
+  </div>
+</section>

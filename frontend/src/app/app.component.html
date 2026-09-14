@@ -1,0 +1,72 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" routerLink="/" (click)="closeMenu()">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none">
+          <path d="M3 12L12 4l9 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M5 10.5V20h14v-9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-logo">GTSE</span>
+        <span class="brand-tag">Garde-corps · Toiture · Étanchéité</span>
+      </span>
+    </a>
+
+    <nav class="nav" [class.open]="menuOpen">
+      @for (item of navItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '' }"
+          (click)="closeMenu()"
+        >
+          {{ item.label }}
+        </a>
+      }
+      <a class="nav-cta btn btn-primary" routerLink="/contact" (click)="closeMenu()">
+        Demander un devis
+      </a>
+    </nav>
+
+    <button class="burger" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main class="site-main">
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-col">
+      <span class="brand-logo">GTSE</span>
+      <p class="footer-tag">Garde-corps · Toiture · Étanchéité</p>
+      <p class="footer-desc">
+        Conception, pose et rénovation d'ouvrages de couverture, d'étanchéité et
+        de garde-corps pour particuliers et professionnels.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      @for (item of navItems; track item.path) {
+        <a [routerLink]="item.path" (click)="closeMenu()">{{ item.label }}</a>
+      }
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>contact&#64;gtse.fr</p>
+      <p>06 00 00 00 00</p>
+      <p>Zone artisanale — France</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 GTSE — Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
